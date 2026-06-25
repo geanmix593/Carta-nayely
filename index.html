@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Nayely ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#ff5f8f,#ff9eb5);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    overflow-y:auto;
+    padding:20px;
+}
+
+.card{
+    width:100%;
+    max-width:700px;
+    background:white;
+    border-radius:25px;
+    padding:30px;
+    text-align:center;
+    margin:30px 0;
+}
+
+.foto{
+    width:250px;
+    max-width:100%;
+    border-radius:20px;
+    margin-bottom:20px;
+    box-shadow:0 0 15px rgba(0,0,0,.3);
+}
+
+h1{
+    color:#ff3366;
+    margin-bottom:10px;
+}
+
+.fecha{
+    color:#ff3366;
+    font-size:20px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.contador{
+    color:#666;
+    margin-bottom:20px;
+    font-size:18px;
+}
+
+button{
+    background:#ff3366;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:18px;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+#carta{
+    display:none;
+    margin-top:25px;
+    text-align:left;
+    line-height:1.8;
+    color:#444;
+
+    opacity:0;
+    transform:translateY(40px);
+
+    transition:all 1.5s ease;
+}
+#carta h2,
+#carta h3{
+    text-align:center;
+}
+
+.corazon{
+    position:absolute;
+    color:red;
+    animation:subir 5s linear infinite;
+    z-index:1;
+}
+
+@keyframes subir{
+    from{
+        transform:translateY(100vh);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-100px);
+        opacity:0;
+    }
+}
+</style>
+</head>
+<button onclick="document.getElementById('musica').play()">
+    🎵 Nuestra Canción
+</button>
+
+<audio id="musica" loop>
+    <source src="Te Amare.mp3" type="audio/mpeg">
+</audio>
+<body>
+
+<div class="card">
+
+    <!-- CAMBIA "nosotros.jpg" POR TU FOTO -->
+    <img src="nosotros.jpeg" alt="Nuestra foto" class="foto">
+    <h3 style="
+color:#ff3366;
+margin-bottom:20px;
+font-style:italic;
+">
+"Aquel primer beso lo recuerdo como si hubiese sido ayer..." ❤️
+</h3>
+    <h1>❤️ Feliz 6 Meses Mi Princesa Nayely ❤️</h1>
+
+    <p class="fecha">
+        25/12/2025 ➜ 25/06/2026
+    </p>
+
+    <p class="contador">
+        6 meses de amor, sonrisas y recuerdos inolvidables ✨
+    </p>
+
+    <button onclick="abrirSorpresa()">
+        Abrir Carta 💌
+    </button>
+
+    <div id="carta">
+
+        <h2>Para Nayely ❤️</h2>
+
+        <p>
+            Mi amor Nayely:
+        </p>
+
+        <p>
+            Hoy cumplimos 6 meses juntos y quiero aprovechar este
+            momento para decirte cuánto significas para mí.
+            Desde aquel 25 de diciembre de 2025 comenzó una de las
+            etapas más bonitas de mi vida.
+        </p>
+
+        <p>
+            Gracias por cada sonrisa, cada abrazo, cada palabra
+            de apoyo y cada momento compartido. A tu lado he
+            aprendido que los pequeños detalles son los que hacen
+            grande una historia de amor.
+        </p>
+
+        <p>
+            Hay muchos recuerdos hermosos que guardo en mi corazón,
+            pero hay uno que jamás podré olvidar:
+            aquel primer beso que nos dimos.
+        </p>
+
+        <p>
+            Lo recuerdo como si hubiese sido ayer. Recuerdo los
+            nervios, la emoción y la felicidad que sentí en ese
+            instante. Fue un momento mágico que marcó nuestra
+            historia y que siempre llevaré conmigo.
+        </p>
+
+        <p>
+            Estos seis meses han sido maravillosos y espero que
+            sean solo el comienzo de muchos más momentos juntos.
+            Quiero seguir construyendo recuerdos contigo,
+            compartiendo sueños y disfrutando cada instante a tu lado.
+        </p>
+
+        <p>
+            Gracias por existir, por ser tan especial y por llenar
+            mi vida de felicidad.
+        </p>
+
+        <h3 style="color:#ff3366;">
+            Feliz 6 meses, mi amor ❤️
+        </h3>
+
+        <h2 style="color:#ff3366;">
+            Te amo muchísimo Nayely 💖
+        </h2>
+
+        <p style="text-align:center;">
+            Con todo mi amor,<br><br>
+            <strong>Geancarlo ❤️</strong>
+        </p>
+
+    </div>
+
+</div>
+
+<script>
+
+function abrirSorpresa(){
+
+    const carta = document.getElementById("carta");
+
+    carta.style.display = "block";
+
+    setTimeout(()=>{
+        carta.style.opacity = "1";
+        carta.style.transform = "translateY(0)";
+    },100);
+
+    document.getElementById("musica").play();
+
+}
+
+function crearCorazon(){
+
+    let corazon = document.createElement("div");
+
+    corazon.classList.add("corazon");
+    corazon.innerHTML = "❤️";
+
+    corazon.style.left = Math.random()*100 + "vw";
+    corazon.style.fontSize = (Math.random()*30+15)+"px";
+
+    document.body.appendChild(corazon);
+
+    setTimeout(()=>{
+        corazon.remove();
+    },5000);
+}
+
+setInterval(crearCorazon,150);
+
+</script>
+
+</body>
+</html>
